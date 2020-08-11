@@ -76,3 +76,11 @@ print(dataframeList[2]["weibo_content"][45])
 print(dataframeList[2]["weibo_content"][46])
 
 # %%
+dataframeList[0]
+
+# %%
+for i in range(len(dataframeList)):
+    dataframeList[i].to_csv("dataset/sina_cctv_processed_data/unityTime/sina_cctv_list_" + str(i + 1) + ".csv")
+
+
+# %%
