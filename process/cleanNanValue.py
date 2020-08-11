@@ -31,14 +31,3 @@ for i in range(len(dataframeList)):
     dataframeList[i] = cleanNanValue(dataframeList[i])
     dataframeList[i].to_csv("dataset/sina_cctv_processed_data/sina_cctv_list_" + str(i + 1) + ".csv")
 
-#%%
-type(df1.iloc[2])
-
-# %%
-type(df1.iloc[2]["WB_from"])
-
-# %%
-df1.iloc[2]["WB_from"].split(" 来自 ")[0]
-
-# %%
-df1.iloc[1]["WB_from"].split(" 来自 ")[0]

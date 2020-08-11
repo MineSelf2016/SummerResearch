@@ -1,5 +1,16 @@
 # SummerResearch
 
+
+## 数据收集
+
+dataset/raw_data 为原始微博数据
+
+dataset/processed_data 为处理后的数据
+
+process 文件夹下为处理数据代码
+
+
+
 ## 新冠肺炎数据的资源整理
 
 微软、白宫COVID-19开放研究数据集
@@ -22,6 +33,4 @@ https://www.celebritieswithcorona.com
 
 ArcGIS跟踪COVID-19
 https://www.arcgis.com/apps/opsdashboard/index.html
-
-
 
