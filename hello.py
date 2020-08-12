@@ -2,6 +2,7 @@
 import utility.URLConvert as url_convert
 import numpy as np 
 import matplotlib.pyplot as plt 
+import pandas as pd 
 import requests
 import json
 
@@ -59,3 +60,17 @@ import pandas as pd
 pd.DataFrame([comment])
 
 # %%
+dataFrameList = []
+for i in range(11):
+    # 1.csv
+    dataFrameList.append(pd.read_csv("dataset/sina_cctv_processed_data/unityTime/sina_cctv_list_" + str(i + 1) + ".csv"))
+
+#%%
+ss = 0
+for i in range(11):
+    ss += dataFrameList[i].shape[0]
+    print(dataFrameList[i].shape)
+
+# %%
+ss 
+
