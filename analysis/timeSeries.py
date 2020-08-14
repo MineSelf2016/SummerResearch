@@ -9,6 +9,7 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 from collections import OrderedDict
 from datetime import datetime
+from utility.TimeConvert import unifyTimeFormat
 import functools
 import time
 import os 
@@ -20,22 +21,6 @@ df = pd.read_csv("dataset/sina_cctv_processed_data/sina_cctv_list_cut_words.csv"
 # %%
 df.describe()
 
-#%%
-def unifyTimeFormat(date):
-       """
-       Input: 1月31日 23:33
-       Output: 1.31
-       """
-       try:
-              date = date.split(" ")[0]
-              date = datetime.strptime(date, '%m月%d日')
-              month = date.month
-              day = date.day
-       except Exception as identifier:
-              month = 2
-              day = 29
-       return str(month) + "." + str(day)
-
 # %%
 df["pub_time"] = df["pub_time"].apply(unifyTimeFormat)
 
@@ -43,14 +28,11 @@ df["pub_time"] = df["pub_time"].apply(unifyTimeFormat)
 df.groupby(by = "pub_time")
 
 # %%
-date_span = []
-day_blog_amount = []
 # 使用有序字典存储
 date_blog = OrderedDict()
 
 for name, group in df.groupby(by = "pub_time"):
-       date_blog[name] = group.size 
-
+       date_blog[name] = group.shape[0] 
 
 #%%
 def order_rule(date1, date2):
@@ -88,43 +70,14 @@ def order_rule(date1, date2):
 def sortedDateValues(date_blog):
     keys = date_blog.keys()
     keys = sorted(keys, key = functools.cmp_to_key(order_rule))
-    return [(key, date_blog[key]) for key in keys]
+    return [(key, int(date_blog[key])) for key in keys]
 
 #%%
 date_blog = sortedDateValues(date_blog)
-date_blog = np.array(date_blog)
-
-#%%
-date_blog
-
-#%%
-plt.plot(date_blog[18:30, 0], date_blog[18:30, 1])
-
-
-
-
-# len(date_span), len(day_blog_amount)
-
-#%%
-date_span
+date_blog_df = pd.DataFrame(date_blog)
 
 # %%
-plt.plot(date_span[10:40]), day_blog_amount[10:40])
+plt.plot(date_blog_df[20:30][0], date_blog_df[20:30][1])
+# plt.plot(date_blog[20:30, 1])
 
-# %%
-print(max(day_blog_amount))
 
-# %%
-for i in range(10, 40):
-       print(day_blog_amount[i])
-
-# %%
-day_blog_amount.index(928)
-
-# %%
-date_span[17]
-
-# %%
-plt.plot(date_span[10:40], day_blog_amount[10:40])
-
-# %%

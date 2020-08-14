@@ -95,6 +95,9 @@ tf-idf 结果为(7885, 31730) 的稀疏矩阵，7885篇微博文档，31730个�
 
 artifical 分析
 
+sklearn 文本聚类
+
+LDA 文本聚类
 
 ## 时序分析
 
@@ -109,5 +112,3 @@ def sortedDateValues(date_blog):
 ```
 
 微博发布量
-<img src="https://thumbnail0.baidupcs.com/thumbnail/497f85839ma914796af826561ec59ed8?fid=4198227075-250528-14805555120678&time=1597316400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-9YhuvJwIOQIiMSMCDIDZbtPvKeI%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=5237397312731542028&dp-callid=0&size=c256_u256&quality=90&vuk=-&ft=video"></img>
-
