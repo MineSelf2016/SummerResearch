@@ -8,6 +8,7 @@
 #%%
 import numpy as np 
 import pandas as pd 
+import matplotlib.pyplot as plt 
 from collections import Counter 
 
 # %%
@@ -40,5 +41,21 @@ cc = Counter(corpus)
 
 # %%
 cc.most_common(200)
+
+# %%
+df["content_cut"][:20]
+
+# %%
+from wordcloud import WordCloud
+
+# %%
+WC = WordCloud(font_path = "/System/Library/Fonts/Supplemental/Songti.ttc")
+
+# %%
+con = WC.generate_from_frequencies(cc)
+
+
+# %%
+plt.imshow(con)
 
 # %%
