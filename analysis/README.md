@@ -111,18 +111,17 @@ celebrity_effect = 7732122 /(78069385 -(54839705.0 - 7732122))
 #明星效应影响celebrity_effect = 24.97%
 ```
 
-
 作图分析，like，comment，forward 的分布状况
 
 1. 微博发布量变化趋势图
 
-![the number of forward of everyday](images/forward/day_forward.png)
+![the number of forward of everyday](../images/forward/day_forward.png)
 
-![the number of forward of early stage](images/forward/early_stage_forward.png)
+![the number of forward of early stage](../images/forward/early_stage_forward.png)
 
-![the number of forward of middle stage](images/forward/middle_stage_forward.png)
+![the number of forward of middle stage](../images/forward/middle_stage_forward.png)
 
-![the number of forward of later stage](images/forward/later_stage_forward.png)
+![the number of forward of later stage](../images/forward/later_stage_forward.png)
 
 
 2. 微博话题的饼状图
@@ -133,9 +132,8 @@ celebrity_effect = 7732122 /(78069385 -(54839705.0 - 7732122))
 
 
 
-4. 肺炎相关信息的关键词（武汉）
-
-
+4. 肺炎相关信息的关键词
+('病例', 4852), ('确诊', 3969), ('疫情', 3578), ('肺炎', 3411), ('新增', 3201), ('武汉', 2610), ('视频', 2395), ('微博', 2309), ('记者', 2187), ('新冠', 2120), ('直播', 2001), ('中国', 1714), ('总台', 1663), ('防控', 1527), ('新型', 1493), ('湖北', 1471), ('今天', 1454), ('感染', 1364), ('患者', 1240), ('累计', 1231), ('美国', 1216), ('冠状病毒', 1202), ('工作', 1182), ('时间', 1122), ('医院', 1122), ('报告', 1049), ('国家', 1018), ('输入', 961), ('关注', 877), ('目前', 854), ('死亡', 846)
 
 5. 微博话题变化趋势图
 
@@ -209,8 +207,6 @@ Arora, Sanjeev, et al. "A latent variable model approach to pmi-based word embed
 
 这篇paper的github repo: https://github.com/PrincetonML/SIF
 
-衡量句子间相似度 2018年7月：
-https://www.zhihu.com/question/29978268/answer/456219359
 
 从大类上分，计算句子相似度的方法可以分为两类：
 1）无监督的方法，即不使用额外的标注数据，常用的方法有：

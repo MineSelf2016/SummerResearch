@@ -54,7 +54,6 @@ WC = WordCloud(font_path = "/System/Library/Fonts/Supplemental/Songti.ttc")
 # %%
 con = WC.generate_from_frequencies(cc)
 
-
 # %%
 plt.imshow(con)
 
