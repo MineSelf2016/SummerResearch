@@ -51,11 +51,6 @@ df["Month"].unique(), df["Week"].unique(), df["Day"].unique()
 # 使用有序字典存储
 date_blog = OrderedDict()
 
-# for name, group in df.groupby(by = "Day"):
-#        # date_blog[name] = group.shape[0] 
-#        date_blog[name] = group["comment"].sum()
-
-
 for name, group in df.groupby(by = "Day"):
        # date_blog[name] = group.shape[0] 
        date_blog[name] = {
