@@ -57,6 +57,33 @@ tf-idf 结果为(7885, 31730) 的稀疏矩阵，7885篇微博文档，31730个�
 
 #### 文本聚类
 
+A dissertation of clustering: http://pages.cs.wisc.edu/~yliang/YingyuLiang_thesis.pdf#Chapter6
+
+Arora, Sanjeev, et al. "A latent variable model approach to pmi-based word embeddings." Transactions of the Association for Computational Linguistics 4 (2016): 385-399.
+
+这篇paper的github repo: https://github.com/PrincetonML/SIF
+
+衡量句子间相似度 2018年7月：
+https://www.zhihu.com/question/29978268/answer/456219359
+
+从大类上分，计算句子相似度的方法可以分为两类：
+1）无监督的方法，即不使用额外的标注数据，常用的方法有：
+（1）对句子中所有词的word vector求平均，获得sentence embedding
+（2）以每个词的tf-idf为权重，对所有词的word vector加权平均，获得sentence embedding
+（3）以smooth inverse frequency[1]（简称SIF)为权重，对所有词的word vector加权平均，最后从中减掉principal component，得到sentence embedding
+（4）通过Word Mover’s Distance[2]（简称WMD），直接度量句子之间的相似度
+2）有监督的方法，需要额外的标注数据，常见的有监督任务有：
+（1）分类任务，例如训练一个CNN的文本分类器[3]，取最后一个hidden layer的输出作为sentence embedding，其实就是取分类器的前几层作为预训练的encoder
+（2）sentence pair的等价性/等义性判定（[4][5]），这种方法的好处是不仅可以得到sentence embedding，还可以直接学习到距离度量函数里的参数
+
+[1] Sanjeev Arora, et al. 2017. A Simple but Tough-to-Beat Baseline for Sentence Embeddings
+[2] Matt J. Kusner, et al. 2015. From Word Embeddings To Document Distances
+[3] Yoon Kim. 2014. Convolutional Neural Networks for Sentence Classification
+[4] Jonas Mueller, et al. 2016. Siamese Recurrent Architectures for Learning Sentence Similarity
+[5] Paul Neculoiu, et al. 2016. Learning Text Similarity with Siamese Recurrent Networks
+[6] Yves Peirsman. 2018. Comparing Sentence Similarity Methods
+
+
 在将文本内容表示成数学上可分析处理的形式后，接下来的工作就是在此数学形式的基础上，对文本进行聚类处理。文本聚类主要有 2 种方法：基于概率 [6] 和基于距离 [7] 。基于概率的方法以贝叶斯概率理论为基础，用概率的分布方式描述聚类结果。基于距离的方法，就是以特征向量表示文档，将文档看成向量空间中的一个点，通过计算点之间的距离进行聚类。 
 
 目前，基于距离的文本聚类比较成熟的方法大致可以分为 2 种类型：层次凝聚法和平面划分法。
