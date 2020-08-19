@@ -112,6 +112,15 @@ celebrity_effect = 7732122 /(78069385 -(54839705.0 - 7732122))
 
 作图分析，like，comment，forward 的分布状况
 
+1. 微博发布量变化趋势图
+
+![the number of forward of everyday](images/forward/day_forward.png)
+
+![the number of forward of early stage](images/forward/early_stage_forward.png)
+
+![the number of forward of middle stage](images/forward/middle_stage_forward.png)
+
+![the number of forward of later stage](images/forward/later_stage_forward.png)
 
 
 2. 微博话题的饼状图
@@ -131,7 +140,6 @@ celebrity_effect = 7732122 /(78069385 -(54839705.0 - 7732122))
 
 
 
-1. 微博发布量（日、周、月）
 
 
 
